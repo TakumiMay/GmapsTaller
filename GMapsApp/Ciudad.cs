@@ -59,8 +59,8 @@ namespace GMapsApp
                     char[] caracteres = { ',', '('};
                     
                     string[] nuevaLinea = line.Split(' ');
-                    String longitud = nuevaLinea[1].TrimStart(caracteres);
-                    String latitud = nuevaLinea[2].TrimEnd(caracteres);
+                    double longitud = Double.Parse(nuevaLinea[1].TrimStart(caracteres));
+                    double latitud = Double.Parse(nuevaLinea[2].TrimEnd(caracteres));
                     zonas.Add(new Zona(latitud, longitud));
                 }
 

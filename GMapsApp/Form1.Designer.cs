@@ -1,4 +1,8 @@
-﻿namespace GMapsApp
+﻿using GMap.NET;
+using GMap.NET.WindowsForms.Markers;
+using System;
+
+namespace GMapsApp
 {
     partial class Form1
     {
@@ -30,8 +34,11 @@
         {
             this.lblTitle = new System.Windows.Forms.Label();
             this.gMap = new GMap.NET.WindowsForms.GMapControl();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.txtLongitud = new System.Windows.Forms.TextBox();
+            this.lbLongitud = new System.Windows.Forms.Label();
+            this.lbLatitud = new System.Windows.Forms.Label();
+            this.txtLatitud = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -52,10 +59,10 @@
             this.gMap.GrayScaleMode = false;
             this.gMap.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             this.gMap.LevelsKeepInMemmory = 5;
-            this.gMap.Location = new System.Drawing.Point(56, 131);
+            this.gMap.Location = new System.Drawing.Point(48, 164);
             this.gMap.MarkersEnabled = true;
             this.gMap.MaxZoom = 20;
-            this.gMap.MinZoom = 5;
+            this.gMap.MinZoom = 1;
             this.gMap.MouseWheelZoomEnabled = true;
             this.gMap.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
             this.gMap.Name = "gMap";
@@ -67,33 +74,62 @@
             this.gMap.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.gMap.ShowTileGridLines = false;
             this.gMap.Size = new System.Drawing.Size(711, 307);
-            this.gMap.TabIndex = 1;
+            this.gMap.TabIndex = 2;
             this.gMap.Zoom = 12D;
             // 
-            // button1
+            // btnAgregar
             // 
-            this.button1.Location = new System.Drawing.Point(413, 93);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(123, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Buscar coordenadas";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAgregar.Location = new System.Drawing.Point(543, 108);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(102, 23);
+            this.btnAgregar.TabIndex = 3;
+            this.btnAgregar.Text = "Agregar marcador";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // textBox1
+            // txtLongitud
             // 
-            this.textBox1.Location = new System.Drawing.Point(224, 95);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(183, 20);
-            this.textBox1.TabIndex = 4;
+            this.txtLongitud.Location = new System.Drawing.Point(354, 91);
+            this.txtLongitud.Name = "txtLongitud";
+            this.txtLongitud.Size = new System.Drawing.Size(183, 20);
+            this.txtLongitud.TabIndex = 4;
+            // 
+            // lbLongitud
+            // 
+            this.lbLongitud.AutoSize = true;
+            this.lbLongitud.Location = new System.Drawing.Point(258, 98);
+            this.lbLongitud.Name = "lbLongitud";
+            this.lbLongitud.Size = new System.Drawing.Size(48, 13);
+            this.lbLongitud.TabIndex = 5;
+            this.lbLongitud.Text = "Longitud";
+            // 
+            // lbLatitud
+            // 
+            this.lbLatitud.AutoSize = true;
+            this.lbLatitud.Location = new System.Drawing.Point(261, 129);
+            this.lbLatitud.Name = "lbLatitud";
+            this.lbLatitud.Size = new System.Drawing.Size(39, 13);
+            this.lbLatitud.TabIndex = 6;
+            this.lbLatitud.Text = "Latitud";
+            // 
+            // txtLatitud
+            // 
+            this.txtLatitud.Location = new System.Drawing.Point(354, 129);
+            this.txtLatitud.Name = "txtLatitud";
+            this.txtLatitud.Size = new System.Drawing.Size(183, 20);
+            this.txtLatitud.TabIndex = 7;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RoyalBlue;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(800, 500);
+            this.Controls.Add(this.txtLatitud);
+            this.Controls.Add(this.lbLatitud);
+            this.Controls.Add(this.lbLongitud);
+            this.Controls.Add(this.txtLongitud);
+            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.gMap);
             this.Controls.Add(this.lblTitle);
             this.Name = "Form1";
@@ -104,12 +140,17 @@
 
         }
 
+       
+
         #endregion
 
         private System.Windows.Forms.Label lblTitle;
         private GMap.NET.WindowsForms.GMapControl gMap;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.TextBox txtLongitud;
+        private System.Windows.Forms.Label lbLongitud;
+        private System.Windows.Forms.Label lbLatitud;
+        private System.Windows.Forms.TextBox txtLatitud;
     }
 }
 

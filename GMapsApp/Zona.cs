@@ -8,13 +8,13 @@ namespace GMapsApp
 {
     class Zona       
     {
-        private String latitud;
-        private String longitud;
+        private double latitud;
+        private double longitud;
 
-        public String Latitud { get => latitud; set => latitud = value; }
-        public String Longitud { get => longitud; set => longitud = value; }
+        public double Latitud { get => latitud; set => latitud = value; }
+        public double Longitud { get => longitud; set => longitud = value; }
 
-        public Zona(String latitud, String longitud)
+        public Zona(double latitud, double longitud)
         {
             this.latitud = latitud;
             this.longitud = longitud;
